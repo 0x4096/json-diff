@@ -22,7 +22,7 @@ public class JsonDiffOption {
     private Set<String> ignorePath;
 
     /**
-     * 字段映射
+     * 字段映射,具体路径,完全匹配不支持正则表达式,exp: person.name, json={"person": {"name": "zhangsan"}}
      */
     private Map<String, String> fieldMapping;
 

@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2025/1/2
  */
 @Data
-public class JsonDiffMessageResp {
+public class JsonDiffResp {
 
     private JsonDiffResult jsonDiffResult;
 

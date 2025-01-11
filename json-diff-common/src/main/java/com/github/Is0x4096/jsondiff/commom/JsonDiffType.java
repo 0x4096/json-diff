@@ -8,11 +8,7 @@ public enum JsonDiffType {
 
     ADD,
     DELETE,
-    UPDATE;
-
-    @Override
-    public String toString() {
-        return this.name().toLowerCase();
-    }
+    UPDATE,
+    MAPPING,
 
 }

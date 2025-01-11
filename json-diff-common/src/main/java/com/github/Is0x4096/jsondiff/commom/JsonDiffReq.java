@@ -7,9 +7,11 @@ import lombok.Data;
  * @date 2025/1/2
  */
 @Data
-public class JsonDiffMessageReq {
+public class JsonDiffReq {
 
     private String projectName;
+
+    private String uri;
 
     private Long timestamp = System.currentTimeMillis();
 
