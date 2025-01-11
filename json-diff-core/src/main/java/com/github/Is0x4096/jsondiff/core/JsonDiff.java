@@ -36,7 +36,7 @@ public class JsonDiff {
         oldJsonValidation.filter(oldJsonMap);
         newJsonValidation.filter(newJsonMap);
 
-        // mapping
+        // mapping diff
         boolean mappingResult = true;
         if (Objects.nonNull(option.getFieldMapping())) {
             Map<String, Object> oldJsonMappingMap = oldJsonValidation.removeAndGet(oldJsonMap, option.getFieldMapping().keySet());

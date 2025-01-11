@@ -1,10 +1,11 @@
-package com.github.Is0x4096.jsondiff;
+package com.github.Is0x4096.jsondiff.test;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.github.Is0x4096.jsondiff.commom.JsonDiffAnalyzeType;
 import com.github.Is0x4096.jsondiff.commom.JsonDiffOption;
 import com.github.Is0x4096.jsondiff.commom.JsonDiffResult;
 import com.github.Is0x4096.jsondiff.core.JsonDiff;
+import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,12 +14,12 @@ import java.util.Set;
 
 /**
  * @author 0x4096.peng@gmail.com
- * @date 2025/1/5
+ * @date 2025/1/11
  */
-public class JsonDiffTest {
+public class JsonDiffObjectTest {
 
-    public static void main(String[] args) {
-
+    @Test
+    public void test() {
         String oldJson = "{\"name\":\"Json on\",\"description\":\"一个简洁的在线 JSON 查看器\",\"opensource\":{\"是否开源\":true,\"GitHub\":\"https://github.com/bimohxh/jsonon\"},\"哈哈\":11}";
         String newJson = "{\"name\":\"Json on\",\"description\":\"一个简洁的在线 JSON 查看器\",\"opensource\":{\"是否开源\":false,\"GitHub\":\"https://github.com2/bimohxh/jsonon\"}}";
 
@@ -44,8 +45,6 @@ public class JsonDiffTest {
 
         System.err.println(JSONObject.toJSONString(jsonDiffResult));
 
-
     }
-
 
 }

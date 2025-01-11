@@ -41,8 +41,7 @@ public class Fastjson2JsonDiffValidation extends AbstractJsonDiffValidation {
             }
 
             Object object = jsonObject.get(s);
-            if (object instanceof JSONArray) {
-                JSONArray jsonArray = (JSONArray) object;
+            if (object instanceof JSONArray jsonArray) {
                 for (int i = 0; i < jsonArray.size(); i++) {
                     key = key + "[" + i + "]";
                     if (jsonArray.get(i) instanceof JSONObject) {
