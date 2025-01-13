@@ -43,11 +43,11 @@ public class Fastjson2JsonDiffValidation extends AbstractJsonDiffValidation {
             Object object = jsonObject.get(s);
             if (object instanceof JSONArray jsonArray) {
                 for (int i = 0; i < jsonArray.size(); i++) {
-                    key = key + "[" + i + "]";
+                    String tempKey =  "[" + i + "]";
                     if (jsonArray.get(i) instanceof JSONObject) {
-                        backTrack(key, jsonArray.getJSONObject(i), jsonPathResult);
+                        backTrack(key + tempKey, jsonArray.getJSONObject(i), jsonPathResult);
                     } else {
-                        jsonPathResult.put(key, jsonArray.get(i));
+                        jsonPathResult.put(key + tempKey, jsonArray.get(i));
                     }
                 }
             } else if (object instanceof JSONObject) {
