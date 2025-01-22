@@ -1,5 +1,6 @@
 package com.github.Is0x4096.jsondiff.core;
 
+import com.github.Is0x4096.jsondiff.commom.JsonDiffObjectType;
 import com.github.Is0x4096.jsondiff.commom.JsonDiffOption;
 
 import java.util.*;
@@ -17,6 +18,11 @@ public abstract class AbstractJsonDiffValidation implements IJsonDiffValidation 
     protected String jsonStr;
 
     /**
+     * jsonStr 串是 {} 还是 []
+     */
+    protected JsonDiffObjectType objectType;
+
+    /**
      * JSON diff 规则
      */
     protected JsonDiffOption jsonDiffOption;
@@ -24,6 +30,7 @@ public abstract class AbstractJsonDiffValidation implements IJsonDiffValidation 
     public AbstractJsonDiffValidation(String jsonStr, JsonDiffOption jsonDiffOption) {
         this.jsonStr = jsonStr;
         this.jsonDiffOption = jsonDiffOption;
+        this.objectType = Objects.nonNull(jsonStr) && jsonStr.startsWith("[") ? JsonDiffObjectType.ARRAY : JsonDiffObjectType.OBJECT;
     }
 
     @Override

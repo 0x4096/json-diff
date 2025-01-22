@@ -2,6 +2,7 @@ package com.github.Is0x4096.jsondiff.core.impl;
 
 import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
+import com.github.Is0x4096.jsondiff.commom.JsonDiffConst;
 import com.github.Is0x4096.jsondiff.commom.JsonDiffOption;
 import com.github.Is0x4096.jsondiff.core.AbstractJsonDiffValidation;
 
@@ -37,13 +38,13 @@ public class Fastjson2JsonDiffValidation extends AbstractJsonDiffValidation {
             if (Objects.isNull(prefix)) {
                 key = s;
             } else {
-                key = prefix + "." + s;
+                key = prefix + JsonDiffConst.DOT + s;
             }
 
             Object object = jsonObject.get(s);
             if (object instanceof JSONArray jsonArray) {
                 for (int i = 0; i < jsonArray.size(); i++) {
-                    String tempKey =  "[" + i + "]";
+                    String tempKey = JsonDiffConst.LEFT_BRACKET + i + JsonDiffConst.RIGHT_BRACKET;
                     if (jsonArray.get(i) instanceof JSONObject) {
                         backTrack(key + tempKey, jsonArray.getJSONObject(i), jsonPathResult);
                     } else {
