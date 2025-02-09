@@ -1,3 +1,25 @@
 {
-  "name": "张三"
+  "name": "张三",
+  "objectArray": {
+    "array2": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "array3": [{"key4":  10086}],
+    "object2": {
+      "key1": "value1",
+      "key2": false,
+      "key3": 1
+    }
+  },
+  "array": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
 }
